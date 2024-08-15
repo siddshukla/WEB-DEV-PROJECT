@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Background Animation */
+        .background-art {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: move 10s infinite ease-in-out alternate;
+        }
+
+        .background-art.art1 {
+            top: -50px;
+            left: -50px;
+            background: rgba(174,238,218,0.3);
+            animation-duration: 15s;
+        }
+
+        .background-art.art2 {
+            bottom: -50px;
+            right: -50px;
+            background: rgba(148,225,233,0.3);
+            animation-duration: 12s;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+            100% {
+                transform: translateX(100px) translateY(100px);
+            }
+        }
+
+        /* Login Page Styles */
+        .login-page {
+            background: linear-gradient(145deg, rgba(174,238,218,0.8) 55%, rgba(148,225,233,0.8) 65%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #2535f5;
+            animation: popUp 1s ease-in-out;
+        }
+
+        @keyframes popUp {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .user-pass input[type="text"],
+        .user-pass input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .user-pass input[type="text"]:focus,
+        .user-pass input[type="password"]:focus {
+            border-color: #2535f5;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .user-pass input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #2535f5;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .user-pass input[type="submit"]:hover {
+            background-color: #1a2bb8;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        a {
+            display: block;
+            margin-top: 15px;
+            color: #2535f5;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #1a2bb8;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Background Arts -->
+    <div class="background-art art1"></div>
+    <div class="background-art art2"></div>
+
+    <!-- Login Page -->
+    <div class="login-page">
+        <h2>Login</h2>
+        <div class="user-pass">
+            <form action="/login" method="post">
+                <div>
+                    <input type="text" name="name" placeholder="Name">
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="Password">
+                </div> 
+                <div>
+                    <input type="submit" value="Login">
+                </div>
+                <a href="/signup">Create Account</a>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
