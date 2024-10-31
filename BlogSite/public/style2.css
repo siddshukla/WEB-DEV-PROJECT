@@ -1,0 +1,118 @@
+/* Import Delius font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Animation for Background Color */
+@keyframes backgroundChange {
+  0% { background-color: #2A2B2E; }
+  25% { background-color: #4A4B4E; }
+  50% { background-color: #3C3D3F; }
+  75% { background-color: #2A2B2E; }
+  100% { background-color: #2A2B2E; }
+}
+
+/* Floating Element Animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Centering Content */
+body {
+  font-family: 'Delius', cursive; /* Apply Delius font */
+  background: linear-gradient(135deg, #2A2B2E, #4A4B4E);
+  color: #ACEB98; /* Light text color */
+  display: flex;
+  flex-direction: column; /* Allows for vertical stacking of heading and form */
+  align-items: center;
+  height: 100vh;
+  animation: backgroundChange 10s infinite; /* Background color change */
+}
+
+/* Page Title */
+h1 {
+  color: #87FF65; /* Bright header color */
+  font-size: 2rem;
+  margin: 20px 0; /* Space below heading */
+  text-align: center;
+}
+
+/* Form Centering */
+form {
+  background-color: rgba(90, 90, 102, 0.8); /* Semi-transparent dark background */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Input Fields */
+input[name="name"],
+textarea.text {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  border-radius: 8px;
+  border: 1px solid #90caf9; /* Light blue border */
+  background-color: rgba(90, 90, 102, 0.8); /* Semi-transparent dark background */
+  font-size: 1rem;
+  color: #ACEB98; /* Light text color */
+}
+
+input[name="name"]::placeholder,
+textarea.text::placeholder {
+  color: #64b5f6; /* Placeholder color */
+}
+
+/* Button Styling */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #5A5A66; /* Dark button color */
+  color: #ACEB98; /* Light text color */
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: float 3s ease-in-out infinite; /* Floating effect */
+}
+
+.btn:hover {
+  background-color: #87FF65; /* Bright hover color */
+}
+
+/* Focus States */
+input[name="name"]:focus,
+textarea.text:focus {
+  outline: none;
+  border-color: #42a5f5; /* Light blue border on focus */
+  background-color: rgba(164, 194, 168, 0.8); /* Semi-transparent lighter background */
+  box-shadow: 0 0 5px rgba(66, 165, 245, 0.5);
+}
+
+/* Additional Button Style */
+.button {
+  background-color: #5A5A66; /* Same as .btn for consistency */
+  color: #ACEB98; /* Light text color */
+  border: none; /* Remove default border */
+  padding: 8px 12px; /* Smaller padding for a smaller button */
+  font-size: 14px; /* Smaller font size */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.button:hover {
+  background-color: #87FF65; /* Bright hover color */
+}
